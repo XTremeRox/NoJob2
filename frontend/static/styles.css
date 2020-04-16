@@ -1,0 +1,121 @@
+body{
+    padding-top: 30px;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    border-color: none;
+    background-color: black;
+}
+
+.navbar-brand > img {
+    /* color: white;
+    font-size: 25px; */
+}
+.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+#tncblock{
+    color: black;
+    background-color: lightgray;
+    padding-bottom: 20px;
+    /* debugging */
+    /* display: none; */
+}
+
+#tnc > .list-group-item{
+    /* background-color: black; */
+    border-color: none;
+}
+
+.livedot {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.livecount{
+    /* line-height: 25px; */
+}
+
+#username{
+    padding-top: 60px;
+}
+
+#unamefield{
+    color: black;
+}
+
+.well{
+    color: black;
+}
+
+#actualchat{
+    background-color:white;
+    height:95%;
+    padding: 20px;
+    overflow: scroll;
+}
+
+#features{
+    margin-left:10px; 
+}
+
+.you{
+    color: blue;
+}
+
+.you::before {
+    content: "You : ";
+    font-weight: bold;
+  }
+  
+
+.stranger{
+    color:red;
+}
+
+.dismsg{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.conmsg{
+    color: green;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-o-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-moz-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-webkit-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  .animate-flicker {
+     -webkit-animation: flickerAnimation 1s infinite;
+     -moz-animation: flickerAnimation 1s infinite;
+     -o-animation: flickerAnimation 1s infinite;
+      animation: flickerAnimation 1s infinite;
+  }

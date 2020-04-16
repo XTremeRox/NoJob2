@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favicon -->
+    <meta name="msapplication-TileImage" content="static/images/favicon.png"> <!-- Windows 8 -->
+    <meta name="msapplication-TileColor" content="#00CCFF"/> <!-- Windows 8 color -->
+    <!--[if IE]><link rel="shortcut icon" href="/static/images/favicon.ico"><![endif]-->
+    <link rel="icon" type="image/png" href="static/images/favicon.ico">
+    <!--Inspired from https://github.com/xtremerox/nojob but this one doesn't use WebRTC ;) Enjoy-->
+    <title>NoJOB | Official</title>
+    <!-- Some sexy fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                    <img class="img-responsive logo text-center" src="static/images/logo.png" alt="">
+            </div>
+          </div>
+          <!-- Terms and conditions block -->
+
+          <div class="container" id="tncblock">
+            <h3>Terms and Conditions:- </h3>
+            <ul class="list-group" id="tnc">
+                <li class="list-group-item">1. All users are obliged to observe these Terms and Conditions.</li>
+                <li class="list-group-item"><b>2. Beware of impersonators</b></li>
+                <li class="list-group-item">3. Please do not use language that is graphic, inappropriate, flirtatious or sexually suggestive.
+                    Additionally, refrain from sharing links of this nature.</li>
+                <li class="list-group-item">4. Please refrain from sharing personal contact details or social media on NoJob.</li>
+                <li class="list-group-item">5. It is recommended not to share the name of any Listener, Member or Guest that you have had a 
+                    one-on-one chat with, or any details from these chats.</li>
+                <li class="list-group-item">6. Please refrain from initiating or participating in spreading rumors.</li>
+                <li class="list-group-item">7. Some people online are dangerous. They may not necessarily be who you think they are.</li>
+                <li class="list-group-item">8. We strongly advise you never to initiate a one-on-one meeting with anyone you chat to on 
+                    the internet. If you HAVE to meet someone, ensure their identity using any other social platform that it is in a public place and an adult 
+                    or friend you trust is with you. </li>
+                <li class="list-group-item">9. Do not open any website links given to you - they could contain spyware, viruses or 
+                    disturbing material. </li>
+                <li class="list-group-item">10.  NoJob in no way does store sessions or user data.</li>
+                <li class="list-group-item">11. If you have any concerns, ignore/skip the user. This is the golden rule of chatting.</li>
+                </ul>
+                <input type="checkbox" id="tncaccept" />
+                <label for="tncaccept">I accept the Terms and Conditions</label>
+                <div id="confwarn"></div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary" id="tncbutton">Next</button>
+                    </div>
+                </div>
+          </div>
+
+          <!-- Username Block  -->
+
+          <div class="container" id="username" style="display: none;">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <b>Introduce Yourself</b><br>
+                    <b>What should people call you? (Alphanumeric preferred)</b><br><br>
+                    <input type="text" pattern="/^\w+$/" placeholder="Enter a username" id="unamefield"><br>
+                    <p id="unamemsg"></p>
+                </div>
+            </div><br><br>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-success" id="unbutton">Start Talking!</button>
+                </div>
+            </div>
+      </div>
+
+
+          <!-- Loading Block  -->
+
+          <div class="container" id="connecting" style="display: none;">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-3 text-center">
+                        <b>Connecting to a random stanger...</b>
+                    </div>
+                    <div class="col-md-4 col-md-offset-2 text-center">
+                        <span class="livedot"></span>
+                        <b>Live - <span id="livecount"></span></b>
+                    </div>
+                </div><br><br><br>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <b>YOU</b>
+                        <img src="static/images/user.png" alt=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <img src="static/images/user.png" class="animate-flicker" alt="">
+                        <b style="color: red;">RANDOM</b>
+                    </div>
+                </div>
+          </div>
+
+          <!-- chat block  -->
+          <div class="container" id="chatblock" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 well" id="chatwindow">
+                            <div id="actualchat">
+                                    <p class="text-center"><strong>You are now chatting with </strong><span id="user2name"></span></p>
+                            </div>
+                            <div style="margin-top: 5px; ">
+                                <form action="">
+                                    <input type="text" placeholder="Your Message" style="width: 80%;" id="msg">
+                                    <button type="submit" class="btn btn-primary" style="left:80%; position: absolute;" id="send">Send</button>
+                                </form>
+                            </div>
+                    </div>
+                    <div class="col-md-3 well" id="features">
+                        <button class="btn btn-danger" style="width: 100%;" id="disconnect">Disconnect</button><br>
+                        <button class="btn btn-success" style="margin-top:10px; width: 100%;" id="newcon">New Stranger</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</body>
+<!-- Server -->
+<script src="static/jquery/jquery.min.js" crossorigin="anonymous"></script>
+<script src="static/bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="static/socket.io.js"></script>
+<script src="static/scripts.js"></script>
+</html>
