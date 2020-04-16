@@ -3,7 +3,6 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
-var count = 0;
 var usernames = [];
 var waitinglist = [];
 //new user adding
@@ -22,7 +21,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/live', function(req, res){
-  res.send(''+(count+1));
+  res.send('' + usernames.length);
 });
 
 app.post('/adduser', function(req, res){
@@ -35,7 +34,6 @@ app.post('/adduser', function(req, res){
 
 io.on('connection', function(socket){
   var username = "";
-  count++;
   //add user and send and recieve messages
   socket.on("init",function(data){
     socket.username = data.username;
@@ -65,12 +63,14 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log(socket.username +' has disconnected' );
     //debug_block
-    console.log('users connected' + usernames + 'sockets length = '+waitinglist.length);
+    console.log('users connected : ' + usernames + 'sockets length = '+ waitinglist.length);
 
-    if(typeof socket.partner.id === 'undefined') {
-    }else{
-        io.to(socket.partner.id).emit("pat_disc", {});
-    }
+    try{
+      io.to(socket.partner.id).emit("pat_disc", {});
+    }catch(e){
+      //do nothing
+      console.log("partner no here");
+   }
     var index = waitinglist.indexOf(socket);
     if (index !== -1){
       waitinglist.splice(index, 1);
@@ -79,7 +79,6 @@ io.on('connection', function(socket){
     if (index !== -1){
       usernames.splice(index, 1);
     }
-    count--;
   });
 });
 
