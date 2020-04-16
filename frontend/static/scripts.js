@@ -124,6 +124,9 @@ $("#newcon").click(function(){
 });
 
 $("#send").click(function(e){
+    if($("#msg").val() == ""){
+        return;
+    }
     e.preventDefault();
     msg = {};
     msg.sender = socket.id;
