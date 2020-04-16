@@ -148,7 +148,10 @@ $("#unbutton").click(function(){
         url: '/sv/adduser',
         type: 'POST',
 		data: JSON.stringify(data),
-		contentType: 'application/json',
+        contentType: 'application/json',
+        error: function(xmlReq, txtStatus, errThrown){
+            $("#unamemsg").html('<b style="color:red">Service Down</b>');
+        },
         success: function(result)
         {   
             if(result==='1'){
