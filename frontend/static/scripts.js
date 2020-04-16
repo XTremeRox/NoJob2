@@ -124,10 +124,10 @@ $("#newcon").click(function(){
 });
 
 $("#send").click(function(e){
+    e.preventDefault();
     if($("#msg").val() == ""){
         return;
     }
-    e.preventDefault();
     msg = {};
     msg.sender = socket.id;
     msg.username = myusername;
