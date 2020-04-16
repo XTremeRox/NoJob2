@@ -148,7 +148,7 @@ $("#unbutton").click(function(){
         $("#unamemsg").html('<b style="color:red">Username is blank.</b>');
         return;
     }
-    myusername = $("#unamefield").val();
+    myusername = $("#unamefield").val().replace(/ /g,'');
     data = {}
     data.myusername = myusername;
     $.ajax({ 

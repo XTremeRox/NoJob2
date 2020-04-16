@@ -5,10 +5,11 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 var usernames = [];
 var waitinglist = [];
+count = 0;
 //new user adding
 function insertval(val){ 
-  if(usernames.indexOf(val.toLowerCase()) === -1){
-     usernames.push(val.toLowerCase()); 
+  if(usernames.indexOf(val) === -1){
+     usernames.push(val); 
      return 1;
     }else{ 
       return -1;
@@ -21,7 +22,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/live', function(req, res){
-  res.send('' + usernames.length);
+  res.send('' + (count+1));
 });
 
 app.post('/adduser', function(req, res){
@@ -34,6 +35,7 @@ app.post('/adduser', function(req, res){
 
 io.on('connection', function(socket){
   var username = "";
+  count++;
   //add user and send and recieve messages
   socket.on("init",function(data){
     socket.username = data.username;
@@ -79,6 +81,7 @@ io.on('connection', function(socket){
     if (index !== -1){
       usernames.splice(index, 1);
     }
+    count--;
   });
 });
 
