@@ -35,11 +35,11 @@ function clearchatbox(){
 function chaton(){
         clearchatbox();
         $("#newcon").attr("disabled", true);
-        $.ajax({url: "/ajax/live", success: function(result){
+        $.ajax({url: "/sv/live", success: function(result){
             $("#livecount").html(result);
         }});
         $username.slideUp("slow", function(){
-            socket=io("nojob.tibstack.com", {path : '/ajax/socket.io'});
+            socket=io("nojob.tibstack.com", {path : '/sv/socket.io'});
             // socket=io("localhost:3000", {path : '/socket.io'});
             //socket=io("localhost:3000");
         $loading.slideDown("slow",function(){
@@ -83,7 +83,7 @@ function rechaton(){
         clearchatbox();
         $("#unamefield").attr("disabled", false);
         $("#newcon").attr("disabled", true);
-        $.ajax({url: "/ajax/live", success: function(result){
+        $.ajax({url: "/sv/live", success: function(result){
             $("#livecount").html(result);
         }});
         $chat_block.slideUp("slow", function(){
@@ -145,15 +145,13 @@ $("#unbutton").click(function(){
     data = {}
     data.myusername = myusername;
     $.ajax({ 
-        url: '/ajax/adduser',
+        url: '/sv/adduser',
         type: 'POST',
 		data: JSON.stringify(data),
 		contentType: 'application/json',
         success: function(result)
-        {   if(result==='2'){
-                $("#unamemsg").html('<b style="color:red">Invalid Userame.</b>');
-            }
-            else if(result==='1'){
+        {   
+            if(result==='1'){
                 $("#unamemsg").html('<b style="color:green">All Set. Redirecting to chat ..</b>');
                 $("#unamefield").attr("disabled", true);
                 setTimeout(chaton, 2000);
