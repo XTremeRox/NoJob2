@@ -8,11 +8,7 @@ var usernames = [];
 var waitinglist = [];
 //new user adding
 function insertval(val){ 
-  var patt = new RegExp("/^\w+$/");
-  var matchtest = patt.test(val);
-  if(matchtest){
-    return 2;
-  }else if(usernames.indexOf(val.toLowerCase()) === -1){
+  if(usernames.indexOf(val.toLowerCase()) === -1){
      usernames.push(val.toLowerCase()); 
      return 1;
     }else{ 
