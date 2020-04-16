@@ -1,1 +1,164 @@
-var _0x17fd=['slideUp','slow','/sv/socket.io','disconnect','#send','#msg','#confwarn','scrollTop','#actualchat','play','<p\x20class=\x22stranger\x22></p>','static/notif.mp3','#unbutton','ready','#tncblock','pat_disc','#newcon','partner','/sv/live','val','attr','slideDown','#tncbutton','\x20has\x20disconnected','checked','<b\x20style=\x22color:red\x22>Cant\x20ignore\x20this\x20:P</b>','stringify','off','ajax','scrollHeight','append','#tncaccept','<b\x20style=\x22color:red\x22>Username\x20is\x20already\x20taken.</b>','#unamemsg','application/json','<p\x20class=\x22conmsg\x20text-center\x22></p>','init','#disconnect','#connecting','You\x20are\x20now\x20talking\x20to\x20','height','/sv/adduser','html','msg','nojob2.tibstack.com','#livecount','<b\x20style=\x22color:green\x22>All\x20Set.\x20Redirecting\x20to\x20chat\x20..</b>','POST','emit','css','username','#chatblock','text','#username','connect','disabled','click','#unamefield'];(function(_0x12e191,_0x17fd51){var _0x452ac4=function(_0x283817){while(--_0x283817){_0x12e191['push'](_0x12e191['shift']());}};_0x452ac4(++_0x17fd51);}(_0x17fd,0xb3));var _0x452a=function(_0x12e191,_0x17fd51){_0x12e191=_0x12e191-0x0;var _0x452ac4=_0x17fd[_0x12e191];return _0x452ac4;};myusername='';socket='';temp_partner='';var notif=new Audio(_0x452a('0x6'));$(document)[_0x452a('0x8')](function(){$tnc_block=$(_0x452a('0x9'));$loading=$(_0x452a('0x21'));$tnc_button=$(_0x452a('0x11'));$tnc_accept=$(_0x452a('0x1a'));$chat_block=$(_0x452a('0x2e'));$username=$(_0x452a('0x30'));$(_0x452a('0xb'))[_0x452a('0xf')](_0x452a('0x32'),!![]);$tnc_button['on'](_0x452a('0x33'),function(){if($tnc_accept['prop'](_0x452a('0x13'))){$tnc_block['slideUp'](_0x452a('0x36'),function(){$username['slideDown'](_0x452a('0x36'),function(){});});}else{$(_0x452a('0x1'))[_0x452a('0x25')](_0x452a('0x14'));}});$('#chatwindow')[_0x452a('0x2c')](_0x452a('0x23'),$(window)[_0x452a('0x23')]()/1.3);});function clearchatbox(){$(_0x452a('0x3'))[_0x452a('0x25')]('');$('#msg')[_0x452a('0xe')]('');$(_0x452a('0x1c'))[_0x452a('0x25')]('');}function chaton(){clearchatbox();$('#newcon')[_0x452a('0xf')](_0x452a('0x32'),!![]);$[_0x452a('0x17')]({'url':_0x452a('0xd'),'success':function(_0x14a380){$(_0x452a('0x28'))[_0x452a('0x25')](_0x14a380);}});$username[_0x452a('0x35')](_0x452a('0x36'),function(){socket=io(_0x452a('0x27'),{'path':_0x452a('0x37')});$loading[_0x452a('0x10')]('slow',function(){socket[_0x452a('0x2b')](_0x452a('0x1f'),{'username':myusername,'id':socket['id']});socket['on'](_0x452a('0x26'),function(_0x5eb944){notif[_0x452a('0x4')]();$(_0x452a('0x3'))[_0x452a('0x19')]($(_0x452a('0x5'))[_0x452a('0x2f')](_0x5eb944));$(_0x452a('0x3'))[_0x452a('0x2')]($(_0x452a('0x3'))[0x0][_0x452a('0x18')]);});socket['on'](_0x452a('0xc'),function(_0x46c291){temp_partner=_0x46c291;$loading[_0x452a('0x35')](_0x452a('0x36'),function(){$(_0x452a('0x3'))['append']($(_0x452a('0x1e'))[_0x452a('0x2f')](_0x452a('0x22')+temp_partner[_0x452a('0x2d')]));$chat_block[_0x452a('0x10')](_0x452a('0x36'));});});socket['on'](_0x452a('0xa'),function(_0xaa7c92){$('#actualchat')[_0x452a('0x19')]($('<p\x20class=\x22dismsg\x20text-center\x22></p>')[_0x452a('0x2f')](temp_partner[_0x452a('0x2d')]+_0x452a('0x12')));$(_0x452a('0x20'))[_0x452a('0xf')](_0x452a('0x32'),!![]);$(_0x452a('0xb'))[_0x452a('0xf')]('disabled',![]);$(_0x452a('0x0'))[_0x452a('0xf')](_0x452a('0x32'),!![]);$(_0x452a('0x39'))[_0x452a('0xf')](_0x452a('0x32'),!![]);temp_partner='';});});});}function clearchatbox(){$(_0x452a('0x3'))['html']('');$(_0x452a('0x0'))[_0x452a('0xe')]('');$('#unamemsg')[_0x452a('0x25')]('');}function rechaton(){clearchatbox();$(_0x452a('0x34'))[_0x452a('0xf')]('disabled',![]);$('#newcon')[_0x452a('0xf')](_0x452a('0x32'),!![]);$[_0x452a('0x17')]({'url':_0x452a('0xd'),'success':function(_0xa12d70){$(_0x452a('0x28'))[_0x452a('0x25')](_0xa12d70);}});$chat_block[_0x452a('0x35')](_0x452a('0x36'),function(){socket[_0x452a('0x31')]();$loading['slideDown'](_0x452a('0x36'),function(){socket['emit'](_0x452a('0x1f'),{'username':myusername,'id':socket['id']});});});}$(_0x452a('0x20'))[_0x452a('0x33')](function(){$(_0x452a('0x34'))[_0x452a('0xf')](_0x452a('0x32'),![]);$chat_block['slideUp'](_0x452a('0x36'),function(){socket[_0x452a('0x38')]();socket[_0x452a('0x16')](_0x452a('0xa'));socket['off']('msg');socket[_0x452a('0x16')]('partner');temp_partner='';$username['slideDown']('slow');$(_0x452a('0xb'))['attr'](_0x452a('0x32'),![]);clearchatbox();});});$(_0x452a('0xb'))[_0x452a('0x33')](function(){$('#unamefield')[_0x452a('0xf')](_0x452a('0x32'),![]);clearchatbox();rechaton();$(_0x452a('0x20'))[_0x452a('0xf')](_0x452a('0x32'),![]);$(_0x452a('0x0'))[_0x452a('0xf')](_0x452a('0x32'),![]);$(_0x452a('0x39'))[_0x452a('0xf')](_0x452a('0x32'),![]);});$(_0x452a('0x39'))[_0x452a('0x33')](function(_0x16d79c){_0x16d79c['preventDefault']();msg={};msg['sender']=socket['id'];msg['username']=myusername;msg['to']=temp_partner['id'];msg['message']=$(_0x452a('0x0'))[_0x452a('0xe')]();socket[_0x452a('0x2b')](_0x452a('0x26'),msg);$(_0x452a('0x3'))[_0x452a('0x19')]($('<p\x20class=\x22you\x22></p>')['text']($(_0x452a('0x0'))[_0x452a('0xe')]()));$(_0x452a('0x0'))['val']('');$(_0x452a('0x3'))[_0x452a('0x2')]($(_0x452a('0x3'))[0x0][_0x452a('0x18')]);});$(_0x452a('0x7'))[_0x452a('0x33')](function(){myusername=$(_0x452a('0x34'))[_0x452a('0xe')]();data={};data['myusername']=myusername;$['ajax']({'url':_0x452a('0x24'),'type':_0x452a('0x2a'),'data':JSON[_0x452a('0x15')](data),'contentType':_0x452a('0x1d'),'success':function(_0x5e7cef){if(_0x5e7cef==='1'){$('#unamemsg')[_0x452a('0x25')](_0x452a('0x29'));$('#unamefield')[_0x452a('0xf')](_0x452a('0x32'),!![]);setTimeout(chaton,0x7d0);}else{$(_0x452a('0x1c'))[_0x452a('0x25')](_0x452a('0x1b'));}}});});
+myusername = "";
+socket = "";
+temp_partner = "";
+var notif = new Audio('static/notif.mp3');
+$(document).ready(function () {
+    $tnc_block = $('#tncblock');
+    //$tnc_block.hide(); //debugging
+    $loading = $('#connecting');
+    $tnc_button = $('#tncbutton');
+    $tnc_accept = $('#tncaccept');
+    $chat_block = $('#chatblock');   
+    $username = $('#username'); 
+    $("#newcon").attr("disabled", true);
+    $tnc_button.on('click', function(){
+        if($tnc_accept.prop('checked')){
+            $tnc_block.slideUp("slow",function(){
+                $username.slideDown("slow",function(){
+                   // setTimeout(chaton, 3000);
+                });
+            });
+        }else{
+            $("#confwarn").html('<b style="color:red">Cant ignore this :P</b>');
+        }
+    });
+    $('#chatwindow').css('height', ($(window).height()/1.3));
+});
+
+
+function clearchatbox(){
+    $("#actualchat").html("");
+    $("#msg").val("");
+    $("#unamemsg").html("");
+}
+
+function chaton(){
+        clearchatbox();
+        $("#newcon").attr("disabled", true);
+        $.ajax({url: "/sv/live", success: function(result){
+            $("#livecount").html(result);
+        }});
+        $username.slideUp("slow", function(){
+            socket=io("nojob2.tibstack.com", {path : '/sv/socket.io'});
+            // socket=io("localhost:3000", {path : '/socket.io'});
+            //socket=io("localhost:3000");
+        $loading.slideDown("slow",function(){
+            // add user to live and random roulette
+            //add user
+            socket.emit("init",{
+                username : myusername,
+                id : socket.id
+            });
+            socket.on("msg",function(message){
+                notif.play();
+                $("#actualchat").append($('<p class="stranger"></p>').text(message));
+                $('#actualchat').scrollTop($('#actualchat')[0].scrollHeight);
+            });
+            socket.on("partner",function(partner){
+                temp_partner = partner;
+                $loading.slideUp("slow", function(){
+                    $("#actualchat").append($('<p class="conmsg text-center"></p>').text("You are now talking to " + temp_partner.username));
+                    $chat_block.slideDown("slow");
+                });
+            });
+            socket.on("pat_disc",function(nothing){
+                $("#actualchat").append($('<p class="dismsg text-center"></p>').text(temp_partner.username + " has disconnected"));
+                $("#disconnect").attr("disabled", true);
+                $("#newcon").attr("disabled", false);
+                $("#msg").attr("disabled", true);
+                $("#send").attr("disabled", true);
+                temp_partner = "";
+            });
+        });
+    });
+}
+
+function clearchatbox(){
+    $("#actualchat").html("");
+    $("#msg").val("");
+    $("#unamemsg").html("");
+}
+
+function rechaton(){
+        clearchatbox();
+        $("#unamefield").attr("disabled", false);
+        $("#newcon").attr("disabled", true);
+        $.ajax({url: "/sv/live", success: function(result){
+            $("#livecount").html(result);
+        }});
+        $chat_block.slideUp("slow", function(){
+        socket.connect();
+       // socket=io("localhost:3000", {path : '/socket.io'});
+        $loading.slideDown("slow",function(){
+            // add user to live and random roulette
+            //add user
+            socket.emit("init",{
+                username : myusername,
+                id : socket.id
+            });
+        });
+    });
+}
+
+$("#disconnect").click(function(){
+    $("#unamefield").attr("disabled", false);
+    $chat_block.slideUp("slow",function(){
+        socket.disconnect();
+        socket.off('pat_disc');
+        socket.off('msg');
+        socket.off('partner');
+        temp_partner="";
+        $username.slideDown("slow");
+        $("#newcon").attr("disabled", false);
+        clearchatbox();
+    });
+});
+
+$("#newcon").click(function(){
+    $("#unamefield").attr("disabled", false);
+    clearchatbox();
+    rechaton();
+    $("#disconnect").attr("disabled", false);
+    $("#msg").attr("disabled", false);
+    $("#send").attr("disabled", false);
+});
+
+$("#send").click(function(e){
+    e.preventDefault();
+    msg = {};
+    msg.sender = socket.id;
+    msg.username = myusername;
+    msg.to = temp_partner.id;
+    msg.message = $("#msg").val();
+    socket.emit('msg', msg);
+    $("#actualchat").append($('<p class="you"></p>').text($("#msg").val()));
+    $("#msg").val("");
+    $('#actualchat').scrollTop($('#actualchat')[0].scrollHeight);
+});
+
+
+//receiving
+//<p class="stranger"><b>Strange : </b>Strange Reply</p>
+
+$("#unbutton").click(function(){
+    myusername = $("#unamefield").val();
+    data = {}
+    data.myusername = myusername;
+    $.ajax({ 
+        url: '/sv/adduser',
+        type: 'POST',
+		data: JSON.stringify(data),
+		contentType: 'application/json',
+        success: function(result)
+        {   
+            if(result==='1'){
+                $("#unamemsg").html('<b style="color:green">All Set. Redirecting to chat ..</b>');
+                $("#unamefield").attr("disabled", true);
+                setTimeout(chaton, 2000);
+            }
+            else{
+                $("#unamemsg").html('<b style="color:red">Username is already taken.</b>');
+            }
+        }
+    });
+});
