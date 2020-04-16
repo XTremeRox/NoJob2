@@ -64,7 +64,10 @@ io.on('connection', function(socket){
   //disconnect
   socket.on('disconnect', function(){
     console.log(socket.username +' has disconnected' );
-     if(typeof socket.partner.id === 'undefined') {
+    //debug_block
+    console.log('users connected' + usernames + 'sockets length = '+waitinglist.length);
+
+    if(typeof socket.partner.id === 'undefined') {
     }else{
         io.to(socket.partner.id).emit("pat_disc", {});
     }
