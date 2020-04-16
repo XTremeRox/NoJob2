@@ -39,7 +39,7 @@ function chaton(){
             $("#livecount").html(result);
         }});
         $username.slideUp("slow", function(){
-            socket=io("nojob.tibstack.com", {path : '/sv/socket.io'});
+            socket=io("nojob2.tibstack.com", {path : '/sv/socket.io'});
             // socket=io("localhost:3000", {path : '/socket.io'});
             //socket=io("localhost:3000");
         $loading.slideDown("slow",function(){
