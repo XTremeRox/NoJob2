@@ -144,6 +144,10 @@ $("#send").click(function(e){
 //<p class="stranger"><b>Strange : </b>Strange Reply</p>
 
 $("#unbutton").click(function(){
+    if($("#unamefield").val().trim() == ""){
+        $("#unamemsg").html('<b style="color:red">Username is blank.</b>');
+        return;
+    }
     myusername = $("#unamefield").val();
     data = {}
     data.myusername = myusername;
