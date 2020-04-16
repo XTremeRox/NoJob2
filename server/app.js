@@ -64,9 +64,6 @@ io.on('connection', function(socket){
   //disconnect
   socket.on('disconnect', function(){
     console.log(socket.username +' has disconnected' );
-    //debug_block
-    console.log('users connected : ' + usernames + 'sockets length = '+ waitinglist.length);
-
     try{
       io.to(socket.partner.id).emit("pat_disc", {});
     }catch(e){
@@ -81,7 +78,9 @@ io.on('connection', function(socket){
     if (index !== -1){
       usernames.splice(index, 1);
     }
+    //debug_block
     count--;
+    console.log('users connected : ' + usernames + ' sockets length = '+ waitinglist.length + 'live = ' + count);
   });
 });
 
