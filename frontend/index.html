@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Inspired from https://github.com/xtremerox/nojob but this one doesn't use WebRTC ;) Enjoy-->
     <meta charset="UTF-8">
     <meta name="theme-color" content="#000000">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,13 @@
     <meta name="msapplication-TileColor" content="#00CCFF"/> <!-- Windows 8 color -->
     <!--[if IE]><link rel="shortcut icon" href="/static/images/favicon.ico"><![endif]-->
     <link rel="icon" type="image/png" href="static/images/favicon.ico">
-    <!--Inspired from https://github.com/xtremerox/nojob but this one doesn't use WebRTC ;) Enjoy-->
     <title>NoJOB | Official</title>
     <!-- Some sexy fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/styles.css?v=2">
 </head>
 <body>
     <div class="container">
@@ -109,7 +109,7 @@
                             </div>
                             <div style="margin-top: 5px; ">
                                 <form action="">
-                                    <input type="text" placeholder="Your Message" style="width: 80%;" id="msg">
+                                    <input type="text" autocomplete="off" placeholder="Your Message" style="width: 80%;" id="msg">
                                     <button type="submit" class="btn btn-primary" style="left:80%; position: absolute;" id="send">Send</button>
                                 </form>
                             </div>
@@ -127,5 +127,5 @@
 <script src="static/jquery/jquery.min.js?v=1" crossorigin="anonymous"></script>
 <script src="static/bootstrap/js/bootstrap.min.js?v=2" crossorigin="anonymous"></script>
 <script src="static/socket.io.js"></script>
-<script src="static/scripts.js?v=4"></script>
+<script src="static/scripts.js?v=5"></script>
 </html>
